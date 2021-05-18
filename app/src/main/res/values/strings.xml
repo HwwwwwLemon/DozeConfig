@@ -1,0 +1,56 @@
+<!--
+  ~ Copyright (c) Hwwwww 2021 https://github.com/HwwwwwLemon/DozeConfig  All Rights Reserved.
+  -->
+
+<resources>
+    <string name="app_name">DozeConfig</string>
+    <string name="splash">Welcome</string>
+    <string name="doze_run_log">Module run log</string>
+    <string name="settings">Settings</string>
+    <string name="about">About</string>
+    <string name="whitelist">Whitelist</string>
+    <string name="applications">Applications</string>
+    <string name="applications_prompt">Choose doze whitelist</string>
+    <string name="not_found_whitelist_file">Not found whitelist file</string>
+    <string name="not_found_whitelist_file_prompt">Please check sdcard/Android/doze.conf is exists?</string>
+    <string name="found_whitelist_file">Found whitelist file!</string>
+    <string name="found_whitelist_file_prompt">Please enjoy!</string>
+    <string name="whitelist_file_error">Whitelist file is error!</string>
+    <string name="log_file">Log File</string>
+    <string name="not_found_log_file">Not found log file!</string>
+    <string name="found_log_file">Found log file!</string>
+    <string name="search">Search</string>
+    <string name="search_hint">Please input package name or app name</string>
+    <string name="log">Log</string>
+    <string name="show_system_apps">Show system apps</string>
+    <string name="save">Save</string>
+    <string name="delete_log">Delete log</string>
+    <string name="github" translatable="false">GitHub:</string>
+    <string name="author">Coolapk:</string>
+    <string name="about_description">This application was developed for the convenience of adding a whitelist to the
+        Doze module. \nWe will obtain some privacy-related permissions to ensure the normal operation of the
+        application:\n👉1, storage read and write permissions (read whitelist and log files)\n👉2, read application list
+        permissions (read application list )\n👉3, Root permission (optimized whitelist)\nIf you encounter any problems
+        (such as bugs, program crashes, etc.) during use, you can submit an issue on Github or privately write to me in
+        Coolapk
+    </string>
+    <string name="version" translatable="false">1.0.0</string>
+    <string name="prompt">Tips</string>
+    <string name="prompt_delete_log">Are sure delete log file?</string>
+    <string name="features">Features:\n1、Optimize App fluency\n2、Improve App stability</string>
+    <string name="permission_prompt">Please give relevant permissions (read and write mobile phone storage permissions),
+        otherwise you will not be able to use this application normally!
+    </string>
+    <string name="in_loop">I\'m still sliding, please stop and do it again!</string>
+    <string name="save_success">Save successfully!</string>
+    <string name="save_failed">Save failed!</string>
+    <!-- Preference Titles -->
+    <string name="common_header">Common setting</string>
+    <string name="advanced_header">Advanced setting</string>
+    <string name="lazy_load_icon">Lazy load icon</string>
+    <string name="lazy_load_icon_summary">Reduce the CPU usage when sliding</string>
+    <string name="run_doze_whitelist">Run doze whitelist optimization</string>
+    <string name="run_doze_whitelist_summary">Tap the main interface card 5 times to optimize (Root)</string>
+
+
+</resources>

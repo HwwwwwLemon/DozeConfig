@@ -1,0 +1,48 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!--
+  ~ Copyright (c) Hwwwww 2021 https://github.com/HwwwwwLemon/DozeConfig  All Rights Reserved.
+  -->
+
+<resources>
+    <string name="app_name">Doze配置</string>
+    <string name="splash">欢迎使用</string>
+    <string name="doze_run_log">模块运行日志</string>
+    <string name="settings">设置</string>
+    <string name="about">关于</string>
+    <string name="whitelist">白名单列表</string>
+    <string name="applications">应用列表</string>
+    <string name="applications_prompt">选择Doze白名单</string>
+    <string name="not_found_whitelist_file">未找到白名单文件</string>
+    <string name="not_found_whitelist_file_prompt">请检查 sdcard/Android/doze.conf 是否存在?</string>
+    <string name="found_whitelist_file">找到白名单文件</string>
+    <string name="found_whitelist_file_prompt">尽情享用吧！</string>
+    <string name="whitelist_file_error">白名单文件发生了错误！</string>
+    <string name="search">搜索</string>
+    <string name="search_hint">请输入包名或应用名</string>
+    <string name="log_file">日志文件</string>
+    <string name="not_found_log_file">没有找到日志文件!</string>
+    <string name="found_log_file">找到日志文件！</string>
+    <string name="log">日志</string>
+    <string name="show_system_apps">显示系统应用</string>
+    <string name="save">保存</string>
+    <string name="delete_log">删除日志</string>
+    <string name="author">酷安:</string>
+    <string name="about_description">
+        这个应用是为了方便Doze模块添加白名单开发的。\n我们会获取一些隐私相关的权限来保证应用的正常运行：\n👉1、存储读写权限（读取白名单以及日志文件）\n👉2、读取应用列表权限（读取应用列表）\n👉3、Root权限（优化白名单）\n你在使用的过程中如果遇到任何问题（如Bug、程序崩溃等）可以在Github提交issues或者在酷安私信我
+    </string>
+    <string name="prompt">提示</string>
+    <string name="prompt_delete_log">你确定要删除日志文件？</string>
+    <string name="features">更新日志:\n1、优化App流畅度\n2、提升App稳定性</string>
+    <string name="permission_prompt">请给予相关权限(读写手机存储权限)，否则无法正常使用本应用！
+    </string>
+    <string name="in_loop">我还在滑动,给我停下来再操作！</string>
+    <string name="save_success">保存成功!</string>
+    <string name="save_failed">保存失败!</string>
+    <!-- Preference Titles -->
+    <string name="common_header">常规</string>
+    <string name="advanced_header">高级</string>
+    <string name="lazy_load_icon">延迟加载图标</string>
+    <string name="lazy_load_icon_summary">在滑动的时候降低CPU的占用(开了约等于没开，作用也不是很大)</string>
+    <string name="run_doze_whitelist">开启白名单优化</string>
+    <string name="run_doze_whitelist_summary">点击主界面卡片5次优化(需要Root)</string>
+</resources>

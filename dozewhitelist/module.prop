@@ -1,0 +1,6 @@
+id=dozewhitelist
+name=深度Doze&清理电池优化白名单
+version=2021.05.18
+versionCode=3
+author=酷安ID:Hwwwww
+description=❗️在/sdcard/Android路径下doze.conf白名单配置文件，没有则不优化，如果没有请到Doze配置APP内生成。❗️❗️扫描时间定为8s，不生效或者开屏联网过慢请到service.sh修改，暂时不打算做并行扫描，得不偿失。❗️❗️❗️如果真的睡死了尝试使用温和一点的代码，doze.sh里修改，然后你得把不温和的注释掉。❗️❗️❗️❗️有问题可以留言但最好先看看楼里有没有解答或者去看看之前的版本下有没有相关的问题，实在没有私信或者Github提交issues。v3更新:1、去除Toast提示（之后也只会有一个版本）。2、加入白名单控制APP（详细见APP👉关于）3、一些优化

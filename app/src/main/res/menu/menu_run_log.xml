@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!--
+  ~ Copyright (c) Hwwwww 2021 https://github.com/HwwwwwLemon/DozeConfig  All Rights Reserved.
+  -->
+
+<menu xmlns:android="http://schemas.android.com/apk/res/android">
+    <item
+            android:id="@+id/delete_log"
+            android:title="@string/delete_log"/>
+</menu>

@@ -1,0 +1,7 @@
+<!--
+  ~ Copyright (c) Hwwwww 2021 https://github.com/HwwwwwLemon/DozeConfig  All Rights Reserved.
+  -->
+
+<resources>
+    <dimen name="fab_margin">16dp</dimen>
+</resources>

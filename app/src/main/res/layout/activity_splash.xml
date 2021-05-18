@@ -1,0 +1,44 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!--
+  ~ Copyright (c) Hwwwww 2021 https://github.com/HwwwwwLemon/DozeConfig  All Rights Reserved.
+  -->
+
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+              xmlns:app="http://schemas.android.com/apk/res-auto" android:orientation="vertical"
+              android:layout_width="match_parent"
+              android:layout_height="match_parent"
+              android:theme="@style/SplashTheme">
+    <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="@string/splash"
+            android:textSize="50sp"
+            android:layout_marginTop="150dp"
+            android:gravity="center"/>
+
+    <ImageView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content" app:srcCompat="@mipmap/ic_launcher_foreground"
+            android:id="@+id/imageView"/>
+    <LinearLayout
+            android:orientation="vertical"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:gravity="bottom">
+        <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content" android:id="@+id/prompt" android:gravity="center"
+                android:layout_marginLeft="20sp" android:layout_marginRight="20sp" android:layout_marginBottom="10sp"/>
+        <TextView android:id="@+id/author"
+                  android:layout_width="match_parent"
+                  android:layout_height="wrap_content"
+                  android:textSize="12sp"
+                  android:gravity="center"
+                  android:layout_marginBottom="10sp"/>
+        <TextView android:id="@+id/version"
+                  android:layout_width="match_parent"
+                  android:layout_height="wrap_content"
+                  android:textSize="12sp"
+                  android:gravity="center" android:layout_marginBottom="20sp"/>
+    </LinearLayout>
+</LinearLayout>
