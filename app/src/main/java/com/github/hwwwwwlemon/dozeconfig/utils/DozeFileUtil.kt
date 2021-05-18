@@ -43,16 +43,21 @@ object DozeFileUtil {
                 dozeApps.add(it.value.trim())
             }
             for (i in dozeApps) {
-                val app = pm.getApplicationInfo(i, 0)
-                val flag = if ((app.flags and ApplicationInfo.FLAG_SYSTEM) == 0) 1 else 2
-                checkAppList.add(
-                    ApplicationAdapter.Apps(
-                        app,
-                        i,
-                        pm.getApplicationLabel(app).toString(),
-                        flag,
+                try {
+                    val app = pm.getApplicationInfo(i, 0)
+                    val flag = if ((app.flags and ApplicationInfo.FLAG_SYSTEM) == 0) 1 else 2
+                    checkAppList.add(
+                        ApplicationAdapter.Apps(
+                            app,
+                            i,
+                            pm.getApplicationLabel(app).toString(),
+                            flag,
+                        )
                     )
-                )
+                } catch (e: Exception) {
+                    e.printStackTrace()
+                    continue
+                }
             }
 
         } catch (e: Exception) {
