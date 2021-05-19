@@ -39,7 +39,7 @@ object DozeFileUtil {
             dozeApps.clear()
             val dozeContent = DozeManager.readFile(DozeManager.DOZE_FILE_PATH, ctx, "\n")
             val pm = ctx.packageManager
-            Regex("[a-z]{1,10}\\.(.+)").findAll(dozeContent).forEach {
+            Regex("[a-z0-9]{1,24}\\.(.+)").findAll(dozeContent).forEach {
                 dozeApps.add(it.value.trim())
             }
             for (i in dozeApps) {

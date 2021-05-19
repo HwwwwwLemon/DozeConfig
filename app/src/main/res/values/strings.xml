@@ -53,10 +53,10 @@
         (such as bugs, program crashes, etc.) during use, you can submit an issue on GitHub or privately write to me in
         Coolapk
     </string>
-    <string name="version" translatable="false">1.0.1</string>
+    <string name="version" translatable="false">1.0.2</string>
     <string name="prompt">Tips</string>
     <string name="prompt_delete_log">Are sure delete log file?</string>
-    <string name="features">Features:\n1、Optimize App fluency\n2、Improve App stability</string>
+    <string name="features">Features:\n1. Fix the bug that some apps cannot be read\n2. Add automatic save (need to be opened in the settings)</string>
     <string name="permission_prompt">Please give relevant permissions (read and write mobile phone storage permissions),
         otherwise you will not be able to use this application normally!
     </string>
@@ -70,6 +70,8 @@
     <string name="lazy_load_icon_summary">Reduce the CPU usage when sliding</string>
     <string name="run_doze_whitelist">Run doze whitelist optimization</string>
     <string name="run_doze_whitelist_summary">Tap the main interface card 5 times to optimize (Root)</string>
+    <string name="auto_save">Auto save doze config</string>
+    <string name="auto_save_summary">Auto save doze.conf</string>
 
 
 </resources>

@@ -41,6 +41,7 @@ import com.bumptech.glide.request.target.CustomTarget
 import com.bumptech.glide.request.transition.Transition
 import com.github.hwwwwwlemon.dozeconfig.R
 import com.github.hwwwwwlemon.dozeconfig.utils.DozeFileUtil
+import com.github.hwwwwwlemon.dozeconfig.utils.MyPreferences
 import com.github.hwwwwwlemon.dozeconfig.utils.Utils
 import kotlinx.coroutines.*
 
@@ -56,6 +57,7 @@ class ApplicationAdapter() : RecyclerView.Adapter<ApplicationAdapter.AppViewHold
     private lateinit var activity: Activity
     var filterType: Int = 1
     var searchStr: String = ""
+    private var preferences: MyPreferences? = null
     private var isRefreshing = false
     private val viewModelJob = SupervisorJob()
     private val uiScope = CoroutineScope(Dispatchers.Main + viewModelJob)
@@ -66,6 +68,7 @@ class ApplicationAdapter() : RecyclerView.Adapter<ApplicationAdapter.AppViewHold
         filterType: Int,
         rv: RecyclerView
     ) : this() {
+        preferences = MyPreferences(activity)
         this.rv = rv
         this.pm = activity.packageManager
         this.activity = activity
@@ -134,6 +137,10 @@ class ApplicationAdapter() : RecyclerView.Adapter<ApplicationAdapter.AppViewHold
         } else {
             DozeFileUtil.checkAppList.remove(app)
             searchApps.add(app)
+        }
+        if(preferences?.get("auto_save",false) as Boolean){
+            DozeFileUtil.saveDozeFile(activity)
+            Utils.showToast(activity,activity.getString(R.string.auto_save),1000)
         }
 
     }

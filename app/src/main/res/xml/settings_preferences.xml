@@ -32,6 +32,10 @@
     <PreferenceCategory
             app:title="@string/advanced_header">
         <SwitchPreferenceCompat
+                app:key="auto_save"
+                app:summary="@string/auto_save_summary"
+                app:title="@string/auto_save"/>
+        <SwitchPreferenceCompat
                 app:key="run_doze_whitelist"
                 app:summary="@string/run_doze_whitelist_summary"
                 app:title="@string/run_doze_whitelist"/>
