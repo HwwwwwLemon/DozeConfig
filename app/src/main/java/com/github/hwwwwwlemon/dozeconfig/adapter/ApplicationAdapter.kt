@@ -20,7 +20,7 @@
  *
  *
  */
-package com.github.hwwwwwlemon.dozeconfig.activity
+package com.github.hwwwwwlemon.dozeconfig.adapter
 
 import android.app.Activity
 import android.content.pm.ApplicationInfo
@@ -130,13 +130,15 @@ class ApplicationAdapter() : RecyclerView.Adapter<ApplicationAdapter.AppViewHold
     private fun onCheckedChange(isChecked: Boolean, app: Apps) {
         if (isChecked) {
             DozeFileUtil.checkAppList.add(app)
+            searchApps.remove(app)
         } else {
             DozeFileUtil.checkAppList.remove(app)
+            searchApps.add(app)
         }
 
     }
 
-    override fun onViewRecycled(holder: ApplicationAdapter.AppViewHolder) {
+    override fun onViewRecycled(holder: AppViewHolder) {
         /*  holder.appIcon.setImageDrawable(null)
           Glide.with(holder.appIcon).clear(holder.appIcon)*/
         super.onViewRecycled(holder)
@@ -287,9 +289,9 @@ class ApplicationAdapter() : RecyclerView.Adapter<ApplicationAdapter.AppViewHold
                 filtered.addAll(checkApps)
                 filtered.addAll(
                     if (filterType == 1) {
-                        searchApps.filter { it.flag == 1 }
+                        searchApps.filter { (it.flag == 1) or checkApps.contains(it) }
                     } else {
-                        searchApps
+                        searchApps.filter { checkApps.contains(it) }
                     }
                 )
 
@@ -299,7 +301,7 @@ class ApplicationAdapter() : RecyclerView.Adapter<ApplicationAdapter.AppViewHold
                     if ((i.packageName.contains(constraint.toString(), true) ||
                                 i.appName.contains(constraint.toString(), true))
                     ) {
-                        if ((i.flag == 2) and !showSystemApps) {
+                        if (((i.flag == 2) and !showSystemApps) or checkApps.contains(i)) {
                             continue
                         }
                         filtered.add(i)

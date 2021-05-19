@@ -36,6 +36,7 @@ import androidx.recyclerview.widget.RecyclerView
 import com.bumptech.glide.Glide
 import com.github.hwwwwwlemon.dozeconfig.R
 import com.github.hwwwwwlemon.dozeconfig.activity.base.BaseActivity
+import com.github.hwwwwwlemon.dozeconfig.adapter.ApplicationAdapter
 import com.github.hwwwwwlemon.dozeconfig.databinding.ActivityApplicationListBinding
 import com.github.hwwwwwlemon.dozeconfig.utils.DozeFileUtil
 import com.github.hwwwwwlemon.dozeconfig.utils.MyPreferences

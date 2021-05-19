@@ -25,7 +25,7 @@ package com.github.hwwwwwlemon.dozeconfig.utils
 import android.content.Context
 import android.content.pm.ApplicationInfo
 import com.github.hwwwwwlemon.dozeconfig.DozeManager
-import com.github.hwwwwwlemon.dozeconfig.activity.ApplicationAdapter
+import com.github.hwwwwwlemon.dozeconfig.adapter.ApplicationAdapter
 import kotlinx.coroutines.*
 
 object DozeFileUtil {
