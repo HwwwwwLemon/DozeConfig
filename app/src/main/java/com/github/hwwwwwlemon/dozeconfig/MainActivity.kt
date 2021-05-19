@@ -193,22 +193,30 @@ class MainActivity : AppCompatActivity() {
         statusSummary = findViewById(R.id.status_summary)
         statusTitle = findViewById(R.id.status_title)
         statusCard = findViewById(R.id.status)
+        var successColor = getColor(R.color.success)
+        var errorColor = getColor(R.color.error)
+        if (Utils.isDarkMode(this)) {
+            successColor = getColor(R.color.success_dark)
+            errorColor = getColor(R.color.error_dark)
+        }
+
+
 
         when {
             DozeManager.checkDozeFile(this) and DozeFileUtil.loadDozeFile(this) -> {
-                statusCard.setCardBackgroundColor(getColor(R.color.success))
+                statusCard.setCardBackgroundColor(successColor)
                 statusSummary.text = getString(R.string.found_whitelist_file_prompt)
                 statusTitle.text = getString(R.string.found_whitelist_file)
                 status = 0
             }
             DozeManager.checkDozeFile(this) and !DozeFileUtil.loadDozeFile(this) -> {
-                statusCard.setCardBackgroundColor(getColor(R.color.error))
+                statusCard.setCardBackgroundColor(errorColor)
                 statusSummary.text = getString(R.string.whitelist_file_error)
                 statusTitle.text = getString(R.string.found_whitelist_file)
                 status = 1
             }
             else -> {
-                statusCard.setCardBackgroundColor(getColor(R.color.error))
+                statusCard.setCardBackgroundColor(errorColor)
                 statusSummary.text = getString(R.string.not_found_whitelist_file_prompt)
                 statusTitle.text = getString(R.string.not_found_whitelist_file)
                 status = 2
