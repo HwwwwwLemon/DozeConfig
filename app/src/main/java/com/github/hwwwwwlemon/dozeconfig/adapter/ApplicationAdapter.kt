@@ -291,7 +291,7 @@ class ApplicationAdapter() : RecyclerView.Adapter<ApplicationAdapter.AppViewHold
                     if (filterType == 1) {
                         searchApps.filter { (it.flag == 1) or checkApps.contains(it) }
                     } else {
-                        searchApps.filter { checkApps.contains(it) }
+                        searchApps.filter { !checkApps.contains(it) }
                     }
                 )
 
