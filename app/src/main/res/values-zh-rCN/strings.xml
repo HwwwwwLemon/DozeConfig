@@ -28,7 +28,7 @@
     <string name="delete_log">删除日志</string>
     <string name="author">酷安:</string>
     <string name="about_description">
-        这个应用是为了方便Doze模块添加白名单开发的。\n我们会获取一些隐私相关的权限来保证应用的正常运行：\n👉1、存储读写权限（读取白名单以及日志文件）\n👉2、读取应用列表权限（读取应用列表）\n👉3、Root权限（优化白名单）\n你在使用的过程中如果遇到任何问题（如Bug、程序崩溃等）可以在Github提交issues或者在酷安私信我
+        这个应用是为了方便Doze模块添加白名单开发的。\n我们会获取一些隐私相关的权限来保证应用的正常运行：\n👉1、存储读写权限（读取白名单以及日志文件）\n👉2、读取应用列表权限（读取应用列表）\n👉3、Root权限（优化白名单）\n你在使用的过程中如果遇到任何问题（如Bug、程序崩溃等）可以在GitHub提交issues或者在酷安私信我
     </string>
     <string name="prompt">提示</string>
     <string name="prompt_delete_log">你确定要删除日志文件？</string>

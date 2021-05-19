@@ -35,8 +35,8 @@ android {
         applicationId "com.github.hwwwwwlemon.dozeconfig"
         minSdkVersion 28
         targetSdkVersion 29
-        versionCode 10001
-        versionName "1.0.0 Release"
+        versionCode 10002
+        versionName "1.0.1 Release"
 
         testInstrumentationRunner "androidx.test.runner.AndroidJUnitRunner"
 

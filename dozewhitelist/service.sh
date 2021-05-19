@@ -9,7 +9,7 @@ done
 source /data/adb/modules/dozewhitelist/log.sh
 
 #扫描时间隔建议小于等于10s，不可以小于0,修改后重启生效，建议为8s
-scanInterval=10s
+scanInterval=8s
 
 sleep 20s
 

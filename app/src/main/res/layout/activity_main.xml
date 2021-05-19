@@ -106,7 +106,6 @@
                                 android:layout_below="@id/status_title"
                                 android:layout_alignStart="@id/status_title"
                                 android:layout_marginTop="5dp"
-
                                 android:textColor="?android:attr/textColorPrimaryInverse"
                         />
                     </RelativeLayout>

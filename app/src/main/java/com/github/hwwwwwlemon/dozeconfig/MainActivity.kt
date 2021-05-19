@@ -54,6 +54,7 @@ class MainActivity : AppCompatActivity() {
     private var preferences: MyPreferences? = null
     private var runDozeWhitelistOpt = false
     private var firstPressedTime: Long = 10000
+    private var handlerFlag = true
     private var status = 0
     private val counts = 5 // 点击次数
     private var count = 0
@@ -154,12 +155,17 @@ class MainActivity : AppCompatActivity() {
         System.arraycopy(mHits, 1, mHits, 0, mHits.size - 1)
         mHits[mHits.size - 1] = System.currentTimeMillis()
         if (!isRun) {
-            Handler().postDelayed({
-                runOnUiThread {
-                    count = 0
-                    mHits = LongArray(counts)
-                }
-            }, 1500)
+            if (handlerFlag) {
+                handlerFlag = false
+                Handler().postDelayed({
+                    runOnUiThread {
+                        handlerFlag = true
+                        count = 0
+                        mHits = LongArray(counts)
+                    }
+                }, 1500)
+            }
+
             count++
             Utils.showToast(this, "再点击 ${counts - count} 次优化白名单 ", 600)
         }
