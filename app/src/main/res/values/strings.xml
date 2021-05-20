@@ -75,6 +75,8 @@
     <string name="auto_save_summary">Auto save doze.conf</string>
     <string name="shortcut_opt">Optimize the whitelist</string>
     <string name="shortcut_app_list">APP List</string>
+    <string name="whitelist_opt_success">Successfully!</string>
+    <string name="whitelist_opt_failed">Failed!</string>
 
 
 </resources>

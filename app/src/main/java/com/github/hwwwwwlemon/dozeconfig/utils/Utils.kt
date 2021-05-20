@@ -34,6 +34,10 @@ import java.io.DataOutputStream
 object Utils {
 
     fun refreshDozeWhitelist(ctx: Context): Boolean {
+
+        if (DozeFileUtil.checkAppList.size==0){
+            return false
+        }
         val sb = StringBuffer("dumpsys deviceidle whitelist ")
         val app = getAppList(ctx)
         app.forEach {

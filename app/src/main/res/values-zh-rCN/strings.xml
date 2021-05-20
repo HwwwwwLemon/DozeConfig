@@ -69,4 +69,6 @@
     <string name="auto_save_summary">自动保存doze.conf不需要点击右上角的保存</string>
     <string name="shortcut_opt">优化白名单</string>
     <string name="shortcut_app_list">应用列表</string>
+    <string name="whitelist_opt_success">优化成功！</string>
+    <string name="whitelist_opt_failed">优化失败！</string>
 </resources>

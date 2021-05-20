@@ -24,13 +24,27 @@
 package com.github.hwwwwwlemon.dozeconfig.activity.shortcuts
 
 import android.os.Bundle
+import android.os.Handler
 import androidx.appcompat.app.AppCompatActivity
+import com.github.hwwwwwlemon.dozeconfig.R
+import com.github.hwwwwwlemon.dozeconfig.utils.DozeFileUtil
 import com.github.hwwwwwlemon.dozeconfig.utils.Utils
 
 class RefreshDozeWhitelist : AppCompatActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
-        Utils.refreshDozeWhitelist(this)
+        if (DozeFileUtil.checkAppList.size == 0) {
+            DozeFileUtil.loadDozeFile(this)
+        }
+        val handler = Handler()
+        handler.postDelayed({
+            if(Utils.refreshDozeWhitelist(this)){
+                Utils.showToast(this,getString(R.string.whitelist_opt_success))
+            }else{
+                 Utils.showToast(this,getString(R.string.whitelist_opt_failed))
+            }
+        }, 1000
+        )
         finish()
     }
 }

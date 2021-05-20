@@ -33,7 +33,7 @@ object DozeFileUtil {
     var dozeApps = mutableListOf<String>()
     private val controlScope = CoroutineScope(Dispatchers.Default)
     fun loadDozeFile(ctx: Context): Boolean {
-
+        var flag = true
         try {
             checkAppList.clear()
             dozeApps.clear()
@@ -56,15 +56,16 @@ object DozeFileUtil {
                     )
                 } catch (e: Exception) {
                     e.printStackTrace()
+                    flag = false
                     continue
                 }
             }
 
         } catch (e: Exception) {
             e.printStackTrace()
-            return false
+            flag = false
         }
-        return true
+        return flag
     }
 
 
