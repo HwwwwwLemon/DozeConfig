@@ -28,6 +28,7 @@ import android.os.Bundle
 import android.os.Handler
 import android.text.method.LinkMovementMethod
 import android.view.LayoutInflater
+import android.widget.ImageView
 import android.widget.TextView
 import androidx.appcompat.app.AlertDialog
 import androidx.appcompat.app.AppCompatActivity
@@ -51,6 +52,7 @@ class MainActivity : AppCompatActivity() {
     private lateinit var statusSummary: TextView
     private lateinit var statusTitle: TextView
     private lateinit var statusCard: MaterialCardView
+    private lateinit var statusIcon: ImageView
     private var preferences: MyPreferences? = null
     private var runDozeWhitelistOpt = false
     private var firstPressedTime: Long = 10000
@@ -193,6 +195,7 @@ class MainActivity : AppCompatActivity() {
         statusSummary = findViewById(R.id.status_summary)
         statusTitle = findViewById(R.id.status_title)
         statusCard = findViewById(R.id.status)
+        statusIcon = findViewById(R.id.status_icon)
         var successColor = getColor(R.color.success)
         var errorColor = getColor(R.color.error)
         if (Utils.isDarkMode(this)) {
@@ -205,18 +208,21 @@ class MainActivity : AppCompatActivity() {
         when {
             DozeManager.checkDozeFile(this) and DozeFileUtil.loadDozeFile(this) -> {
                 statusCard.setCardBackgroundColor(successColor)
+                statusIcon.setImageResource(R.drawable.ic_success_fill)
                 statusSummary.text = getString(R.string.found_whitelist_file_prompt)
                 statusTitle.text = getString(R.string.found_whitelist_file)
                 status = 0
             }
             DozeManager.checkDozeFile(this) and !DozeFileUtil.loadDozeFile(this) -> {
                 statusCard.setCardBackgroundColor(errorColor)
+                statusIcon.setImageResource(R.drawable.ic_question_fill)
                 statusSummary.text = getString(R.string.whitelist_file_error)
                 statusTitle.text = getString(R.string.found_whitelist_file)
                 status = 1
             }
             else -> {
                 statusCard.setCardBackgroundColor(errorColor)
+                statusIcon.setImageResource(R.drawable.ic_error_fill)
                 statusSummary.text = getString(R.string.not_found_whitelist_file_prompt)
                 statusTitle.text = getString(R.string.not_found_whitelist_file)
                 status = 2

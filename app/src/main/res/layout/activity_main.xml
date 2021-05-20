@@ -106,7 +106,7 @@
                                 android:layout_height="28dp"
                                 android:layout_centerVertical="true"
                                 app:tint="?android:attr/textColorPrimaryInverse"
-                                app:srcCompat="@drawable/ic_error"/>
+                                />
 
                         <TextView
                                 android:id="@+id/status_title"
@@ -204,7 +204,7 @@
                         <ImageView
                                 android:layout_width="28dp"
                                 android:layout_height="28dp"
-                                app:srcCompat="@drawable/ic_assignment"/>
+                                app:srcCompat="@drawable/ic_log"/>
 
                         <TextView
                                 android:layout_width="wrap_content"

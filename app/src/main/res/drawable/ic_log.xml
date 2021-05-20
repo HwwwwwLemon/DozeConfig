@@ -21,21 +21,8 @@
   ~
   -->
 
-<menu xmlns:android="http://schemas.android.com/apk/res/android"
-      xmlns:app="http://schemas.android.com/apk/res-auto"
-      xmlns:tools="http://schemas.android.com/tools"
-      tools:context="com.github.hwwwwwlemon.dozeconfig.MainActivity">
-    <item
-            android:id="@+id/toolbar_show_system_apps"
-            android:checkable="true"
-            android:title="@string/show_system_apps"/>
-    <item
-            android:id="@+id/toolbar_save"
-            android:icon="@drawable/ic_save"
-            android:title="@string/save"/>
-    <item
-            android:id="@+id/toolbar_search"
-            android:title="@string/search"
-            app:actionViewClass="androidx.appcompat.widget.SearchView"
-            app:showAsAction="always"/>
-</menu>
+<vector android:height="24dp" android:viewportHeight="1024" android:tint="?attr/colorControlNormal"
+    android:viewportWidth="1024" android:width="24dp" xmlns:android="http://schemas.android.com/apk/res/android">
+    <path android:fillColor="#FF000000" android:pathData="M224,831.94L224,192.1L223.81,192L576,192v159.94c0,35.33 28.74,64.06 64.06,64.06h159.71c0.03,0.51 0.22,1.18 0.22,1.66L800.26,832 224,831.94zM757.66,352L640,351.94L640,224.13L757.66,352zM833.73,340.13l-163.87,-178.08C651.71,142.34 619.26,128 592.67,128L223.81,128A64.03,64.03 0,0 0,160 192.1v639.84A64,64 0,0 0,223.74 896h576.51A64,64 0,0 0,864 831.87L864,417.66c0,-25.86 -12.74,-58.46 -30.27,-77.54z"/>
+    <path android:fillColor="#FF000000" android:pathData="M640,512h-256a32,32 0,0 0,0 64h256a32,32 0,0 0,0 -64M640,672h-256a32,32 0,0 0,0 64h256a32,32 0,0 0,0 -64"/>
+</vector>

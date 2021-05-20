@@ -23,24 +23,21 @@
 
 <PreferenceScreen
         xmlns:app="http://schemas.android.com/apk/res-auto">
-
-
-    <PreferenceCategory
-            app:title="@string/common_header">
-
-    </PreferenceCategory>
     <PreferenceCategory
             app:title="@string/advanced_header">
         <SwitchPreferenceCompat
                 app:key="auto_save"
+                app:icon="@drawable/ic_save"
                 app:summary="@string/auto_save_summary"
                 app:title="@string/auto_save"/>
         <SwitchPreferenceCompat
                 app:key="run_doze_whitelist"
+                app:icon="@drawable/ic_rocket_fill"
                 app:summary="@string/run_doze_whitelist_summary"
                 app:title="@string/run_doze_whitelist"/>
         <SwitchPreferenceCompat
                 app:key="lazy_load_icon"
+                app:icon="@drawable/ic_icon"
                 app:summary="@string/lazy_load_icon_summary"
                 app:title="@string/lazy_load_icon"/>
     </PreferenceCategory>

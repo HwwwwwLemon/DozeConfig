@@ -51,7 +51,7 @@
     </string>
     <string name="prompt">提示</string>
     <string name="prompt_delete_log">你确定要删除日志文件？</string>
-    <string name="features">更新日志:\n1、修复无法读取某些APP的BUG\n2、添加自动保存（需要在设置打开）
+    <string name="features">更新日志:\n1、添加Shortcut\n2、更换图标\n3、修复bug
 </string>
     <string name="permission_prompt">请给予相关权限(读写手机存储权限)，否则无法正常使用本应用！
     </string>
@@ -67,4 +67,6 @@
     <string name="run_doze_whitelist_summary">点击主界面卡片5次优化(需要Root)</string>
     <string name="auto_save">自动保存Doze配置</string>
     <string name="auto_save_summary">自动保存doze.conf不需要点击右上角的保存</string>
+    <string name="shortcut_opt">优化白名单</string>
+    <string name="shortcut_app_list">应用列表</string>
 </resources>
