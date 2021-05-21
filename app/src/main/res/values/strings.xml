@@ -53,7 +53,7 @@
         (such as bugs, program crashes, etc.) during use, you can submit an issue on GitHub or privately write to me in
         Coolapk
     </string>
-    <string name="version" translatable="false">1.2.0 Release</string>
+    <string name="version" translatable="false">1.2.1 Release</string>
     <string name="prompt">Tips</string>
     <string name="prompt_delete_log">Are sure delete log file?</string>
     <string name="features">Features:\n1. Add Shortcut\n2. Change the icon\n3. Fix bugs

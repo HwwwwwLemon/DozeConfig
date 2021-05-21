@@ -69,7 +69,7 @@ class ApplicationsListActivity : BaseActivity() {
         binding = ActivityApplicationListBinding.inflate(layoutInflater)
         preferences = MyPreferences(this)
         setContentView(binding.root)
-
+        initStatusBar()
 
     }
 
@@ -79,7 +79,7 @@ class ApplicationsListActivity : BaseActivity() {
                 DozeFileUtil.loadDozeFile(this)
             }
         }
-        initStatusBar()
+
         initLayout()
         super.onResume()
     }
