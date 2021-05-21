@@ -30,6 +30,7 @@ import kotlinx.coroutines.*
 
 object DozeFileUtil {
     val checkAppList = mutableListOf<ApplicationAdapter.Apps>()
+    val errorList = mutableListOf<String>()
     var dozeApps = mutableListOf<String>()
     private val controlScope = CoroutineScope(Dispatchers.Default)
     fun loadDozeFile(ctx: Context): Boolean {
@@ -37,6 +38,7 @@ object DozeFileUtil {
         try {
             checkAppList.clear()
             dozeApps.clear()
+            errorList.clear()
             val dozeContent = DozeManager.readFile(DozeManager.DOZE_FILE_PATH, ctx, "\n")
             val pm = ctx.packageManager
             Regex("[a-z0-9]{1,24}\\.(.+)").findAll(dozeContent).forEach {
@@ -56,6 +58,7 @@ object DozeFileUtil {
                     )
                 } catch (e: Exception) {
                     e.printStackTrace()
+                    errorList.add("\uD83D\uDC49 $i ❌")
                     flag = false
                     continue
                 }

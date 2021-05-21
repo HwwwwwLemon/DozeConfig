@@ -35,7 +35,7 @@
     <string name="not_found_whitelist_file_prompt">请检查 sdcard/Android/doze.conf 是否存在?</string>
     <string name="found_whitelist_file">找到白名单文件</string>
     <string name="found_whitelist_file_prompt">尽情享用吧！🚀(点我)</string>
-    <string name="whitelist_file_error">白名单文件发生了错误！</string>
+    <string name="whitelist_file_error">白名单文件发生了错误！😭(点我查看错误)</string>
     <string name="search">搜索</string>
     <string name="search_hint">请输入包名或应用名</string>
     <string name="log_file">日志文件</string>
@@ -51,7 +51,7 @@
     </string>
     <string name="prompt">提示</string>
     <string name="prompt_delete_log">你确定要删除日志文件？</string>
-    <string name="features">更新日志:\n1、添加Shortcut\n2、更换图标\n3、修复bug
+    <string name="features">更新日志:\n1、修复bug\n2、添加配置文件错误查看器
 </string>
     <string name="permission_prompt">请给予相关权限(读写手机存储权限)，否则无法正常使用本应用！
     </string>

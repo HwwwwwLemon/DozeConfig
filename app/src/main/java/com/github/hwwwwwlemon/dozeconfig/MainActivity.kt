@@ -79,21 +79,28 @@ class MainActivity : AppCompatActivity() {
         Glide.with(binding.dozeIcon).load(R.mipmap.ic_launcher_foreground).into(binding.dozeIcon)
         //应用列表
         binding.status.setOnClickListener {
-            continuousClick {
-                when (status) {
-                    0 -> {
-                        Utils.showToast(this, "\uD83E\uDD73")
+
+            when (status) {
+                0 -> {
+
+                    continuousClick {
                         if (runDozeWhitelistOpt) {
                             Utils.refreshDozeWhitelist(this)
+                        } else {
+                            Utils.showToast(this, "\uD83E\uDD73")
                         }
-
                     }
-                    1 -> Utils.showToast(this, "\uD83E\uDD7A")
-                    2 -> Utils.showToast(this, "\uD83D\uDE29")
-                    else -> Utils.showToast(this, "\uD83E\uDD76")
-                }
 
+                }
+                1 -> {
+                    Utils.showToast(this, "\uD83E\uDD7A")
+                    showDozeConfigurationFile()
+                }
+                2 -> Utils.showToast(this, "\uD83D\uDE29")
+                else -> Utils.showToast(this, "\uD83E\uDD76")
             }
+
+
         }
 
         binding.applicationsList.setOnClickListener {
@@ -228,6 +235,22 @@ class MainActivity : AppCompatActivity() {
                 status = 2
             }
         }
+
+    }
+
+    private fun showDozeConfigurationFile() {
+
+        val sb = StringBuilder("Error List:\n")
+        DozeFileUtil.errorList.forEach {
+            sb.append(it).append("\n")
+        }
+        sb.append("也许您没安装这个应用或者包名有错误。\n应用列表更新一次即可。")
+        val dozeWhitelist = sb.toString()
+        val builder = AlertDialog.Builder(this)
+        builder.setTitle(R.string.prompt)
+        builder.setMessage(dozeWhitelist)
+        builder.create()
+        builder.show()
 
     }
 
