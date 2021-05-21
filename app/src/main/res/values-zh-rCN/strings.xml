@@ -71,4 +71,10 @@
     <string name="shortcut_app_list">应用列表</string>
     <string name="whitelist_opt_success">优化成功！</string>
     <string name="whitelist_opt_failed">优化失败！</string>
+    <string name="delete_config">删除配置文件</string>
+    <string name="cancel">取消</string>
+    <string name="confirm">确定</string>
+    <string name="delete_success">删除成功！</string>
+    <string name="delete_failed">删除失败！</string>
+    <string name="delete_config_dialog">此操作会删除Doze白名单配置文件，这会直接导致模块和应用无法正常的工作。\n\n你确定删除吗？</string>
 </resources>

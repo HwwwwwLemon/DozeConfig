@@ -26,6 +26,7 @@ import android.app.Activity
 import android.content.pm.ApplicationInfo
 import android.content.pm.PackageManager
 import android.graphics.drawable.Drawable
+import android.os.Handler
 import android.util.Log
 import android.view.LayoutInflater
 import android.view.View
@@ -62,6 +63,7 @@ class ApplicationAdapter() : RecyclerView.Adapter<ApplicationAdapter.AppViewHold
     private val viewModelJob = SupervisorJob()
     private val uiScope = CoroutineScope(Dispatchers.Main + viewModelJob)
     private val controlScope = CoroutineScope(Dispatchers.Default)
+    private val mHandler = Handler()
 
     constructor(
         activity: Activity,
@@ -138,10 +140,19 @@ class ApplicationAdapter() : RecyclerView.Adapter<ApplicationAdapter.AppViewHold
             DozeFileUtil.checkAppList.remove(app)
             searchApps.add(app)
         }
-        if(preferences?.get("auto_save",false) as Boolean){
-            DozeFileUtil.saveDozeFile(activity)
-            Utils.showToast(activity,activity.getString(R.string.auto_save),1000)
+        mHandler.post {
+            controlScope.launch {
+                if (preferences?.get("auto_save", false) as Boolean) {
+                    DozeFileUtil.saveDozeFile(activity)
+                    withContext(Dispatchers.Main) {
+                        Utils.showToast(activity, activity.getString(R.string.auto_save), 1000)
+                    }
+
+                }
+            }
+
         }
+
 
     }
 

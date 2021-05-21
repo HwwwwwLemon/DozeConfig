@@ -58,16 +58,16 @@ object DozeManager {
         return false
     }
 
-    fun deleteFile(path: String, ctx: Context) {
+    fun deleteFile(path: String, ctx: Context): Boolean {
         if (checkPermission(ctx)) {
             val file = File(SDCARD_PATH, path)
             if (!file.exists()) {
                 throw FileNotFoundException(file.absolutePath)
             } else {
-                file.delete()
+                return file.delete()
             }
         }
-
+        return false
     }
 
     fun writeFile(path: String, content: String, ctx: Context) {

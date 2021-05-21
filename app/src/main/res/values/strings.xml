@@ -53,7 +53,7 @@
         (such as bugs, program crashes, etc.) during use, you can submit an issue on GitHub or privately write to me in
         Coolapk
     </string>
-    <string name="version" translatable="false">1.1.0</string>
+    <string name="version" translatable="false">1.2.0 Release</string>
     <string name="prompt">Tips</string>
     <string name="prompt_delete_log">Are sure delete log file?</string>
     <string name="features">Features:\n1. Add Shortcut\n2. Change the icon\n3. Fix bugs
@@ -77,6 +77,14 @@
     <string name="shortcut_app_list">APP List</string>
     <string name="whitelist_opt_success">Successfully!</string>
     <string name="whitelist_opt_failed">Failed!</string>
+    <string name="delete_config">Delete config file</string>
+    <string name="cancel">Cancel</string>
+    <string name="confirm">Confirm</string>
+    <string name="delete_success">Delete successfully!</string>
+    <string name="delete_failed">Delete failed!</string>
+    <string name="delete_config_dialog">This operation will delete the Doze whitelist configuration file, which will
+        directly cause the module and application to not work properly.\n\nAre you sure to delete it?
+    </string>
 
 
 </resources>

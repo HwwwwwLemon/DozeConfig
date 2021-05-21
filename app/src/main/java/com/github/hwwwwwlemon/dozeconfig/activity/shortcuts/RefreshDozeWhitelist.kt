@@ -23,28 +23,37 @@
 
 package com.github.hwwwwwlemon.dozeconfig.activity.shortcuts
 
+import android.app.Activity
 import android.os.Bundle
 import android.os.Handler
-import androidx.appcompat.app.AppCompatActivity
 import com.github.hwwwwwlemon.dozeconfig.R
 import com.github.hwwwwwlemon.dozeconfig.utils.DozeFileUtil
+import com.github.hwwwwwlemon.dozeconfig.utils.StatusBarUtil
 import com.github.hwwwwwlemon.dozeconfig.utils.Utils
+import kotlin.system.exitProcess
 
-class RefreshDozeWhitelist : AppCompatActivity() {
+class RefreshDozeWhitelist : Activity() {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
+        StatusBarUtil.immersive(this)
+    }
+
+    override fun onResume() {
+        super.onResume()
         if (DozeFileUtil.checkAppList.size == 0) {
             DozeFileUtil.loadDozeFile(this)
         }
         val handler = Handler()
         handler.postDelayed({
-            if(Utils.refreshDozeWhitelist(this)){
-                Utils.showToast(this,getString(R.string.whitelist_opt_success))
-            }else{
-                 Utils.showToast(this,getString(R.string.whitelist_opt_failed))
+            if (Utils.refreshDozeWhitelist(this)) {
+                Utils.showToast(this, getString(R.string.whitelist_opt_success))
+            } else {
+                Utils.showToast(this, getString(R.string.whitelist_opt_failed))
             }
-        }, 1000
-        )
-        finish()
+            finish()
+        }, 500)
+        handler.postDelayed({
+            exitProcess(0)
+        }, 3000)
     }
 }

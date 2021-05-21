@@ -34,6 +34,7 @@ import androidx.appcompat.widget.SearchView
 import androidx.recyclerview.widget.LinearLayoutManager
 import androidx.recyclerview.widget.RecyclerView
 import com.bumptech.glide.Glide
+import com.github.hwwwwwlemon.dozeconfig.DozeManager
 import com.github.hwwwwwlemon.dozeconfig.R
 import com.github.hwwwwwlemon.dozeconfig.activity.base.BaseActivity
 import com.github.hwwwwwlemon.dozeconfig.adapter.ApplicationAdapter
@@ -68,9 +69,19 @@ class ApplicationsListActivity : BaseActivity() {
         binding = ActivityApplicationListBinding.inflate(layoutInflater)
         preferences = MyPreferences(this)
         setContentView(binding.root)
+
+
+    }
+
+    override fun onResume() {
+        if (DozeFileUtil.checkAppList.size == 0) {
+            if (DozeManager.checkDozeFile(this)) {
+                DozeFileUtil.loadDozeFile(this)
+            }
+        }
         initStatusBar()
         initLayout()
-
+        super.onResume()
     }
 
     override fun initStatusBar() {
