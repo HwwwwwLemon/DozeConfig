@@ -30,6 +30,7 @@ import android.graphics.Color
 import android.os.Handler
 import android.view.Gravity
 import android.widget.LinearLayout
+import android.widget.RelativeLayout
 import android.widget.TextView
 import android.widget.Toast
 
@@ -50,11 +51,21 @@ class ToastUtil {
     @SuppressLint("ShowToast")
     private fun default(ctx: Context, message: String): ToastUtil {
         toast = Toast.makeText(ctx, message, Toast.LENGTH_SHORT)
-        val view: LinearLayout = toast?.view as LinearLayout
-        view.gravity = Gravity.CENTER
-        val tv = view.findViewById(R.id.message) as TextView
-        tv.setBackgroundColor(Color.TRANSPARENT)
-        tv.gravity = Gravity.CENTER
+        var tv: TextView?
+
+        //临时解决OnePlus 8 Toast类型为RelativeLayout？？？？？
+        //暂时没别的解决办法
+        try {
+            val view: LinearLayout = toast?.view as LinearLayout
+            view.gravity = Gravity.CENTER
+            tv = view.findViewById(R.id.message)
+        } catch (e: Exception) {
+            val view: RelativeLayout = toast?.view as RelativeLayout
+            view.gravity = Gravity.CENTER
+            tv = view.findViewById(R.id.message)
+        }
+        tv?.setBackgroundColor(Color.TRANSPARENT)
+        tv?.gravity = Gravity.CENTER
         return this
     }
 
